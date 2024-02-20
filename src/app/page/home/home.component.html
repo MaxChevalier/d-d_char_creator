@@ -1,2 +1,11 @@
 <p>welcome to home</p>
-<app-classes/>
+<div class="container">
+    <div class="">
+        <button class="btn btn-primary" value="classes" (click)="onChangeTab($event)">Classe</button>
+        <button class="btn btn-primary" value="races" (click)="onChangeTab($event)">Races</button>
+    </div>
+    <div class="">
+        <app-classes *ngIf="selectedTab === 'classes'"></app-classes>
+        <app-races *ngIf="selectedTab === 'races'"></app-races>
+    </div>
+</div>
