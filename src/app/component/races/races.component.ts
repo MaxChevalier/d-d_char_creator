@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Open5eService } from '../../service/open5e.service';
 import { IRace } from '../../interface/IRace';
 import { SubscriberController } from '../Commun/subscriberController';
+import { NgFor } from '@angular/common';
 
 @Component({
 	selector: 'app-races',
 	standalone: true,
-	imports: [],
+	imports: [NgFor],
 	templateUrl: './races.component.html',
 	styleUrl: './races.component.css'
 })
