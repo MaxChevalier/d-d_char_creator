@@ -5,12 +5,14 @@
         <button class="btn btn-primary" value="races" (click)="onChangeTab($event)">Races</button>
         <button class="btn btn-primary" value="backgrounds" (click)="onChangeTab($event)">Backgrounds</button>
         <button class="btn btn-primary" value="stat" (click)="onChangeTab($event)">Stat</button>
+        <button class="btn btn-primary" value="info" (click)="onChangeTab($event)">Information</button>
     </div>
     <div class="f-col w30">
         <app-classes *ngIf="selectedTab === 'classes'" (selectedClass)="setClass($event)" />
         <app-races *ngIf="selectedTab === 'races'" (selectedRace)="setRace($event)" />
         <app-background *ngIf="selectedTab === 'backgrounds'" (selectedBackground)="setBg($event)" />
         <app-statatributor *ngIf="selectedTab === 'stat'" (selectedStat)="setStat($event)" />
+        <app-char-info *ngIf="selectedTab === 'info'" (selectedInfo)="setInfo($event)" />
     </div>
     <div class="f-col w30">
         <span>Player : {{Char.playerName}}</span>

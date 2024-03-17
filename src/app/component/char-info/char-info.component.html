@@ -1,0 +1,18 @@
+<form [formGroup]="form" class="f-col">
+    <label for="charName">Character Name</label>
+    <input type="text" formControlName="charName" placeholder="Enter character name" id="charName" (change)="setInfo()">
+    <label for="playerName">Player Name</label>
+    <input type="text" formControlName="playerName" placeholder="Enter player name" id ="playerName" (change)="setInfo()">
+    <label for="alignment">Alignment</label>
+    <select formControlName="alignment" id="alignment" (change)="setInfo()">
+        <option value="Lawful Good">Lawful Good</option>
+        <option value="Neutral Good">Neutral Good</option>
+        <option value="Chaotic Good">Chaotic Good</option>
+        <option value="Lawful Neutral">Lawful Neutral</option>
+        <option value="True Neutral">True Neutral</option>
+        <option value="Chaotic Neutral">Chaotic Neutral</option>
+        <option value="Lawful Evil">Lawful Evil</option>
+        <option value="Neutral Evil">Neutral Evil</option>
+        <option value="Chaotic Evil">Chaotic Evil</option>
+    </select>
+</form>

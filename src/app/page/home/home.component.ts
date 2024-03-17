@@ -9,6 +9,7 @@ import { IClasse } from '../../interface/IClasse';
 import { IRace } from '../../interface/IRace';
 import { IStat } from '../../interface/IStat';
 import { IBackground } from '../../interface/IBackground';
+import { CharInfoComponent } from '../../component/char-info/char-info.component';
 
 @Component({
   selector: 'app-home',
@@ -19,13 +20,14 @@ import { IBackground } from '../../interface/IBackground';
     RacesComponent,
     BackgroundComponent,
     StatatributorComponent,
+    CharInfoComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
 
-  public selectedTab : string = '';
+  public selectedTab: string = '';
 
   public Char: IChar = {} as IChar;
 
@@ -50,5 +52,11 @@ export class HomeComponent {
   setBg(bg: IBackground) {
     this.Char.background = bg;
   }
-  
+
+  setInfo(info: { charName: string, playerName: string, alignment: string, }) {
+    this.Char.charName = info.charName;
+    this.Char.playerName = info.playerName;
+    this.Char.alignment = info.alignment;
+  }
+
 }

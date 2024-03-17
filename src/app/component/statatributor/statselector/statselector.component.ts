@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IStat } from '../../../interface/IStat';
 import { StatComponent } from './stat/stat.component';
 
@@ -20,6 +20,8 @@ export class StatselectorComponent {
   }
   public attrPoints : number = 12;
 
+  @Output() public selectedStat: EventEmitter<IStat> = new EventEmitter<IStat>()
+
   public SetStat(value:number, update:number): number{
     // let newvalue = value + update;
     let updatedPoints = 0;
@@ -34,6 +36,7 @@ export class StatselectorComponent {
 
   callOutput(item: {name: string, value: number}) {
     this.stat = Object.assign(this.stat, {[item.name]: this.SetStat(this.stat[item.name as keyof IStat], item.value)});
+    this.selectedStat.emit(this.stat);
   }
 
 }

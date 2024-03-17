@@ -29,6 +29,7 @@ export class StatatributorComponent {
 
   switchRdm(stat: boolean) {
     this.isRandom = stat;
+    this.setStat({} as IStat);
   }
   
 }

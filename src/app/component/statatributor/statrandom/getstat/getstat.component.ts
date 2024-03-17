@@ -15,6 +15,7 @@ export class GetstatComponent {
   @ViewChildren(DicerolerComponent) dicerolers!: QueryList<DicerolerComponent>;
 
   public total: number = 0;
+    elementRef: any;
 
   constructor() {
   }
