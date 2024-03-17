@@ -23,15 +23,15 @@ export class StatselectorComponent {
   @Output() public selectedStat: EventEmitter<IStat> = new EventEmitter<IStat>()
 
   public SetStat(value:number, update:number): number{
-    // let newvalue = value + update;
+    let newvalue = value + update;
     let updatedPoints = 0;
     if (value < 3 || value > 15) return value;
-    else if (value < 8) updatedPoints = 0;
-    else if (value < 14) updatedPoints = 1;
-    else updatedPoints = 2;
+    else if (value < 8 || newvalue < 8) updatedPoints = 0;
+    else if (value > 13 || newvalue > 13) updatedPoints = 2;
+    else updatedPoints = 1;
     if (update < 0) this.attrPoints += -updatedPoints;
     else this.attrPoints += updatedPoints;
-    return value + update;
+    return newvalue;
   }
 
   callOutput(item: {name: string, value: number}) {

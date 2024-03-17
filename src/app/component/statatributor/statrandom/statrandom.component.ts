@@ -18,6 +18,8 @@ export class StatrandomComponent {
 
     @Output() public selectedStat: EventEmitter<IStat> = new EventEmitter<IStat>()
 
+    stat : IStat = {} as IStat;
+
     dragData: any;
 
     constructor(private elementRef: ElementRef) {}
@@ -65,31 +67,18 @@ export class StatrandomComponent {
     }
 
     setStat() {
+        let stats = this.elementRef.nativeElement.querySelectorAll('.stat');
         let stat = {} as IStat;
-        this.dicerolers.forEach(diceroler => {
-            // get perent of diceroler
-            switch (diceroler.elementRef && diceroler.elementRef.nativeElement.parentElement) {
-                case "str" :
-                    stat.strength = diceroler.total;
-                    break;
-                case "dex" :
-                    stat.dexterity = diceroler.total;
-                    break;
-                case "con" :
-                    stat.constitution = diceroler.total;
-                    break;
-                case "int" :
-                    stat.intelligence = diceroler.total;
-                    break;
-                case "wis" :
-                    stat.wisdom = diceroler.total;
-                    break;
-                case "cha" :
-                    stat.charisma = diceroler.total;
-                    break;
-            }
+        stats.forEach((statobj: any) => {
+            let name = statobj.getAttribute('name');
+            console.log(statobj.childNodes);
+            let value = statobj.childNodes[1].total;
+            console.log(name, value);
+            stat = { ...stat, [name]: value };
         });
-        this.selectedStat.emit(stat)
+        this.stat = stat;
+        console.log(this.stat);
+        this.selectedStat.emit(this.stat);
     }
 
 }
