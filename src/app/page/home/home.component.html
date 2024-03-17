@@ -1,11 +1,31 @@
 <p>welcome to home</p>
-<div class="container">
-    <div class="">
+<div class="f-row f-space">
+    <div class="f-col select-change-container w30">
         <button class="btn btn-primary" value="classes" (click)="onChangeTab($event)">Classe</button>
         <button class="btn btn-primary" value="races" (click)="onChangeTab($event)">Races</button>
+        <button class="btn btn-primary" value="backgrounds" (click)="onChangeTab($event)">Backgrounds</button>
+        <button class="btn btn-primary" value="stat" (click)="onChangeTab($event)">Stat</button>
     </div>
-    <div class="">
-        <app-classes *ngIf="selectedTab === 'classes'"></app-classes>
-        <app-races *ngIf="selectedTab === 'races'"></app-races>
+    <div class="f-col w30">
+        <app-classes *ngIf="selectedTab === 'classes'" (selectedClass)="setClass($event)" />
+        <app-races *ngIf="selectedTab === 'races'" (selectedRace)="setRace($event)" />
+        <app-background *ngIf="selectedTab === 'backgrounds'" (selectedBackground)="setBg($event)" />
+        <app-statatributor *ngIf="selectedTab === 'stat'" (selectedStat)="setStat($event)" />
+    </div>
+    <div class="f-col w30">
+        <span>Player : {{Char.playerName}}</span>
+        <span>Name : {{Char.charName}}</span>
+        <span>Classe : {{Char.class ? Char.class.name : ''}}</span>
+        <span>Race : {{Char.race ? Char.race.name : '' }}</span>
+        <span>Background : {{Char.background ? Char.background.name : ''}}</span>
+        <span>Alignment : {{Char.alignment}}</span>
+        <hr>
+        <span>Str : {{Char.stat ? Char.stat.strength : ''}}</span>
+        <span>Dex : {{Char.stat ? Char.stat.dexterity : ''}}</span>
+        <span>Con : {{Char.stat ? Char.stat.constitution : ''}}</span>
+        <span>Int : {{Char.stat ? Char.stat.intelligence : ''}}</span>
+        <span>Wis : {{Char.stat ? Char.stat.wisdom : ''}}</span>
+        <span>Cha : {{Char.stat ? Char.stat.charisma : ''}}</span>
+
     </div>
 </div>

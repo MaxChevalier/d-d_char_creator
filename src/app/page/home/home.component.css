@@ -1,0 +1,21 @@
+.f-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.f-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.f-space{
+    justify-content: space-between;
+}
+
+.select-change-container{
+    width: 25vw;
+}
+
+.w30{
+    width: 30%;
+}

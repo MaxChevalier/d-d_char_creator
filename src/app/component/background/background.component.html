@@ -1,1 +1,1 @@
-<button *ngFor="let background of backgrounds" class="btn btn-primary" >{{background.name}}</button>
+<button *ngFor="let background of backgrounds" class="btn btn-primary" (click)="setBg(background)" >{{background.name}}</button>

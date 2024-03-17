@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { IClasse } from '../interface/IClasse';
 import { IRace } from '../interface/IRace';
+import { IBackground } from '../interface/IBackground';
 
 @Injectable({
 	providedIn: 'root'
@@ -39,6 +40,12 @@ export class Open5eService {
 	public getAllRaces(): Observable<IRace[]> {
 		return this.http.get(this.apiRoutes.races).pipe(map(
 			(res: any) => res.results as IRace[])
+		)
+	}
+
+	public getAllBackgrounds(): Observable<IBackground[]> {
+		return this.http.get(this.apiRoutes.backgrounds).pipe(map(
+			(res: any) => res.results as IBackground[])
 		)
 	}
 }

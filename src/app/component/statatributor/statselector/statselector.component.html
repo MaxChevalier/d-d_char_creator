@@ -1,0 +1,8 @@
+<app-stat [name]="'strength'" [value]="stat.strength" [attrPoints]="attrPoints" (SetStat)="callOutput($event)"/>
+<app-stat [name]="'dexterity'" [value]="stat.dexterity" [attrPoints]="attrPoints" (SetStat)="callOutput($event)"/>
+<app-stat [name]="'constitution'" [value]="stat.constitution" [attrPoints]="attrPoints" (SetStat)="callOutput($event)"/>
+<app-stat [name]="'intelligence'" [value]="stat.intelligence" [attrPoints]="attrPoints" (SetStat)="callOutput($event)"/>
+<app-stat [name]="'wisdom'" [value]="stat.wisdom" [attrPoints]="attrPoints" (SetStat)="callOutput($event)"/>
+<app-stat [name]="'charisma'" [value]="stat.charisma" [attrPoints]="attrPoints" (SetStat)="callOutput($event)"/>
+
+<div>Coût en point : {{attrPoints}} / 27</div>

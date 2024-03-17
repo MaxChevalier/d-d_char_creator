@@ -1,0 +1,6 @@
+<div>
+    <button (click)="onUpdateStat(-1)" [disabled]="value<=3">◀</button>
+    <span>{{value}}</span>
+    <button (click)="onUpdateStat(1)" [disabled]="value>=15||attrPoints>=27||(value>13&&attrPoints>=26)">▶</button>
+    <span>{{name}}</span>
+</div>

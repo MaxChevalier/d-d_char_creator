@@ -1,1 +1,1 @@
-<button *ngFor="let classe of classes" class="btn btn-primary" >{{classe.name}}</button>
+<button *ngFor="let classe of classes" class="btn btn-primary" (click)="setClass(classe)">{{classe.name}}</button>

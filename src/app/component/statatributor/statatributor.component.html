@@ -1,0 +1,4 @@
+<button (click)="switchRdm(true)" *ngIf="!isRandom">Switch to Random</button>
+<button (click)="switchRdm(false)" *ngIf="isRandom">Switch to Manual</button>
+<app-statselector *ngIf="!isRandom"/>
+<app-statrandom *ngIf="isRandom"/>

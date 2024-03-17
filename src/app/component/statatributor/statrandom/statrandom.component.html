@@ -1,0 +1,32 @@
+<button (click)="roleDice()">reload dice</button>
+<div>
+    <div id="attrless" class="f-row" dropzone="move" (dragover)="dragOver($event)" (drop)="drop($event)">
+        <app-getstat draggable="true" (dragstart)="dragStart($event)" (dragover)="dragOver($event)" />
+        <app-getstat draggable="true" (dragstart)="dragStart($event)" (dragover)="dragOver($event)" />
+        <app-getstat draggable="true" (dragstart)="dragStart($event)" (dragover)="dragOver($event)" />
+        <app-getstat draggable="true" (dragstart)="dragStart($event)" (dragover)="dragOver($event)" />
+        <app-getstat draggable="true" (dragstart)="dragStart($event)" (dragover)="dragOver($event)" />
+        <app-getstat draggable="true" (dragstart)="dragStart($event)" (dragover)="dragOver($event)" />
+    </div>
+    <div class="f-row">
+        <div dropzone="move" (dragover)="dragOver($event)" (drop)="drop($event)">
+            <h4>Strength</h4>
+        </div>
+        <div dropzone="move" (dragover)="dragOver($event)" (drop)="drop($event)">
+            <h4>Dexterity</h4>
+        </div>
+        <div dropzone="move" (dragover)="dragOver($event)" (drop)="drop($event)">
+            <h4>Constitution</h4>
+        </div>
+        <div dropzone="move" (dragover)="dragOver($event)" (drop)="drop($event)">
+            <h4>Intelligence</h4>
+        </div>
+        <div dropzone="move" (dragover)="dragOver($event)" (drop)="drop($event)">
+            <h4>Wisdom</h4>
+        </div>
+        <div dropzone="move" (dragover)="dragOver($event)" (drop)="drop($event)">
+            <h4>Charisma</h4>
+        </div>
+    </div>
+
+</div>
